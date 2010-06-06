@@ -1,0 +1,7 @@
+log-file-pattern: simple-log.*
+log-message-pattern: ((?!\|).*?(?=\|))
+log-fields:
+    - date
+    - component
+    - log
+mongodb-server: localhost
