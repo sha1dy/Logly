@@ -17,14 +17,14 @@ class LogParser < Thor
       exit
     end
     
-    config = LogConfig.new(config_filename)
+    config = Logly::Config.new(config_filename)
     mongo_helper = MongoHelper.new(config)
     
-    File.open(log_filename) do |f|
-      f.each_line do |line|
-        parsed_line = Parser.parse(line, config.log_message_pattern, config.log_fields)
-        mongo_helper.upload(parsed_line)
-      end
-    end
+    #File.open(log_filename) do |f|
+    #  f.each_line do |line|
+    #    parsed_line = Parser.parse(line, config.log_message_pattern, config.log_fields)
+    #    mongo_helper.upload(parsed_line)
+    #  end
+    #end
   end
 end
